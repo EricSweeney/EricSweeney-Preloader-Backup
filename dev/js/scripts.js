@@ -6,7 +6,7 @@ import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
 
 gsap.registerPlugin(MotionPathPlugin, DrawSVGPlugin, MorphSVGPlugin);
 
-const mainTL = gsap.timeline({delay: 1});
+const mainTL = gsap.timeline();
 
 mainTL
 //.from("#Ring-4", {duration: 0.4, transformOrigin: '50% 50%', scale: 0, opacity: 0, ease: "back.out(1)"})
@@ -39,9 +39,9 @@ function orbitIn(){
     //.to(".FullPlanet", {duration: 1, ease: "power1.out", x: -500}, "three")
     //.to(".FullPlanet", {duration: 1, ease: "power1.in", x: 0}, "four")
 
-    .to("#FullPlanet", {duration: 1, ease: "power1.out", x: 500}, "one")
+    .to("#FullPlanet", {duration: 1, ease: "power1.out", x: 200}, "one")
     .to("#FullPlanet", {duration: 1, ease: "power1.in", x: 0}, "two")
-    .to("#FullPlanet", {duration: 1, ease: "power1.out", x: -500}, "three")
+    .to("#FullPlanet", {duration: 1, ease: "power1.out", x: -200}, "three")
     .to("#FullPlanet", {duration: 1, ease: "power1.in", x: 0}, "four")
 
     ;
@@ -81,7 +81,7 @@ function moonOrbit(){
     tl
     //.to(".FullPlanet", {duration: 2, ease:"none", rotation: "180_cw", transformOrigin: "0% 0%"})
     //.to("#Moon", {duration: 1, ease:"none", motionPath:{path:"#Orbit", align: "#Orbit", start: 0.5, end:1, alignOrigin:[0.5, 0.5]}})
-    .to("#Moon", {duration: 2, ease:"none", motionPath:{path:"#Orbit", align: "#Orbit", start: 0, end:1, alignOrigin:[0.5, 0.5]}})
+    .to("#Moon", {duration: 3, ease:"none", motionPath:{path:"#Orbit", align: "#Orbit", start: 0, end:1, alignOrigin:[0.5, 0.5]}})
     ;
 
     return tl;
@@ -98,7 +98,7 @@ mainTL
 .from("#LoadingText", {duration: 3, opacity: 0, ease: "elastic.out(0.5, 0.3)", y: 200}, "begin")
 .add(loadingIn())
 .from("#FullPlanet", {duration: 3, opacity: 0, ease: "elastic.out(0.5, 0.7)", y: -450}, "begin")
-.to("#FullPlanet", {duration: 2, ease: "power1.inOut", x: -500}, "start1")
+.to("#FullPlanet", {duration: 2, ease: "power1.inOut", x: -200}, "start1")
 .to("#FullPlanet", {duration: 1, ease: "power1.in", x: 0}, "start2")
 //.from("#Rectangle-left", {duration: 2, scaleX: 0, transformOrigin: '100%', ease: "power1.inOut"}, "start1")
 //.to("#Rectangle-left", {duration: 1, scaleX: 0, transformOrigin: '100%', ease: "power1.in"}, "start2")
